@@ -20,7 +20,7 @@ export default function Productscard({ allproducts }) {
             >
               {/* Image Container */}
               <span className="text-7xl group-hover:scale-110 transition-transform duration-300">
-                {item.categoryIcon}
+                {item.image}
               </span>
 
               {/* Card Body */}
@@ -47,15 +47,25 @@ export default function Productscard({ allproducts }) {
                   </div>
 
                   {/* Price Change Badge */}
+                  {/* Price Change Badge */}
                   {item.change?.pct !== undefined && (
                     <div
                       className={`badge gap-1 font-semibold px-3 py-3 ${
-                        isPositive
-                          ? "badge-success/15 text-success border-success/30"
-                          : "badge-error/15 text-error border-error/30"
+                        item.change.pct > 0
+                          ? "bg-red-100 text-red-600 border border-red-200"
+                          : item.change.pct < 0
+                            ? "bg-green-100 text-green-600 border border-green-200"
+                            : "bg-gray-100 text-gray-500 border border-gray-200"
                       }`}
                     >
-                      <span>{isPositive ? "▲" : "▼"}</span>
+                      <span>
+                        {item.change.pct > 0
+                          ? "▲"
+                          : item.change.pct < 0
+                            ? "▼"
+                            : "—"}
+                      </span>
+
                       <span>{Math.abs(item.change.pct)}%</span>
                     </div>
                   )}

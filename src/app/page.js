@@ -8,7 +8,9 @@ import { Suspense } from "react";
 export default function Home() {
   return (
     <>
-      <Marque></Marque>
+      <Suspense fallback={<div>Loading products...</div>}>
+        <Marque></Marque>
+      </Suspense>
 
       <Banner />
 
