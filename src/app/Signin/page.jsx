@@ -45,6 +45,13 @@ import React from "react";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "react-hot-toast";
 
+const handleGooglesignin = async () => {
+  await authClient.signIn.social({
+    provider: "google",
+    callbackURL: "/",
+  });
+};
+
 export default function Signin() {
   const router = useRouter();
 
@@ -104,6 +111,16 @@ export default function Signin() {
 
             <button type="submit" className="btn btn-neutral bg-green-700 mt-4">
               সাইন ইন
+            </button>
+
+            <div className=" font-white text-center py-3">অথবা</div>
+            <button
+              type="button"
+              onClick={handleGooglesignin}
+              className="btn btn-neutral border-1 border-amber-100 font bold text-[#000000] bg-[#FFFFFF]"
+            >
+              {" "}
+              Signin With Google
             </button>
           </fieldset>
         </form>
