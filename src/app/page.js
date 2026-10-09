@@ -9,16 +9,6 @@ import ProductPriceSections from "@/components/homepage/ProductPriceSections";
 export default function Home() {
   return (
     <>
-      <Suspense
-        fallback={
-          <h2 className="text-xl font-bold text-[#000000]">
-            Loading Marque...
-          </h2>
-        }
-      >
-        <Marque></Marque>
-      </Suspense>
-
       <Banner />
       <Suspense
         fallback={

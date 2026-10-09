@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast";
 import Navbar from "@/components/homepage/Navbar";
 import Footer from "@/components/homepage/Footer";
 import { Suspense } from "react";
+import Marquee from "@/components/homepage/Marque";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,16 @@ export default function RootLayout({ children }) {
           }
         >
           <Navbar />
+        </Suspense>
+
+        <Suspense
+          fallback={
+            <h2 className="text-xl font-bold text-[#000000]">
+              Loading Marque...
+            </h2>
+          }
+        >
+          <Marquee />
         </Suspense>
 
         {children}

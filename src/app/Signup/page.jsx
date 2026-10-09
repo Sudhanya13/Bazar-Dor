@@ -126,7 +126,7 @@ export default function Signup() {
   const router = useRouter();
 
   const handleGooglesignup = async () => {
-    await authClient.signUp.social({
+    await authClient.signIn.social({
       provider: "google",
       callbackURL: "/",
     });
@@ -163,7 +163,7 @@ export default function Signup() {
   };
 
   return (
-    <div className="mx-auto max-w-7xl">
+    <div className="mx-auto max-w-7xl mt-6">
       <h1 className="text-center font-bold font-black text-3xl">
         অ্যাকাউন্ট তৈরি করুন
       </h1>

@@ -28,13 +28,24 @@ export default function Userinfo() {
     <div>
       {user ? (
         <div className="flex items-center gap-2">
-          <div className="avatar">
-            <div className="ring-primary ring-offset-base-100 w-12 rounded-full ring-2 ring-offset-2">
+          {/* <div className="avatar"> */}
+          {/* <div className="ring-primary ring-offset-base-100 w-12 rounded-full ring-2 ring-offset-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-600 text-lg font-bold uppercase text-white">
                 {user.name?.charAt(0) || "U"}
               </div>
+            </div> */}
+          <div className="avatar">
+            <div className="relative h-48 w-48 overflow-hidden rounded-xl">
+              <Image
+                alt="Tailwind-CSS-Avatar-component"
+                height={55}
+                width={45}
+                src="/illustration-cartoon-of-a-cute-girl-standing-and-smiling-while-dressed-in-colorful-and-casual-clothes-vector.jpg"
+                className=" object-cover"
+              />
             </div>
           </div>
+
           <h2>{user?.name}</h2>
           <button onClick={handlesignout} className="btn btn-block">
             Signout

@@ -89,7 +89,7 @@ export default function Signin() {
   // The JSX must be returned directly from the main component function
   return (
     <>
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-7xl mt-6">
         <h1 className="text-center font-bold font-black text-3xl">সাইন ইন</h1>
         <p className="py-3">
           বিস্তারিত দাম, বাজার তুলনা ও প্রোফাইল দেখতে অ্যাকাউন্টে ঢুকুন।
