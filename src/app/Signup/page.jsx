@@ -1,27 +1,57 @@
 "use client";
 
 import { authClient } from "@/lib/auth-client";
+// import { redirect } from "next/dist/server/api-utils";
+import { useRouter } from "next/navigation";
 import React from "react";
+import toast from "react-hot-toast";
 
 export default function Signup() {
+  const router = useRouter();
   const onSubmit = async (e) => {
     e.preventDefault();
     const formdata = new FormData(e.target);
     const user = Object.fromEntries(formdata.entries());
 
     console.log(user);
-
+    // try {
+    // const { data, error } = await authClient.signUp.email({
+    //   ...user,
+    // });
     const { data, error } = await authClient.signUp.email({
       ...user,
       callbackURL: "/",
     });
-    if (data) {
-      console.log(data);
-      redirect("/");
-    }
+
     if (error) {
       console.log(error);
+      toast.error(error.message || "Registration failed!");
+      return;
     }
+
+    if (data) {
+      console.log(data);
+      toast.success("Registration successful!");
+      router.push("/");
+    }
+    // } catch (error) {
+    //   toast.error(error.message || "Something went wrong!");
+    // }
+
+    //     if (data) {
+    //       console.log(data);
+    //       toast.success("Registration successful!");
+    //       // redirect("/");
+    //       router.push("/");
+
+    // //       catch (error) {
+    // //   toast.error(error.message || "Something went wrong!");
+    // // }
+    //     }
+    //     if (error) {
+    //       console.log(error);
+    //       toast.error(error.message || "Registration failed!");
+    //     }
   };
   return (
     <div className=" mx-auto  max-w-7xl">

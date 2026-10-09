@@ -57,7 +57,8 @@ export default async function Page({ params }) {
   if (!categorySlug) {
     return (
       <div className="p-8 text-center text-gray-500">
-        ক্যাটাগরি পাওয়া যায়নি।
+        {" "}
+        এই ক্যাটাগরিতে কোনো পণ্য পাওয়া যায়নি।
       </div>
     );
   }
