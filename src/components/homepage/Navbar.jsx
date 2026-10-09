@@ -32,9 +32,15 @@ export default function Navbar() {
 
           {/* Buttons */}
           <div className="flex items-center gap-2">
-            <button className="btn btn-ghost  ">সাইন ইন</button>
+            <Link href="/Signin">
+              {" "}
+              <button className="btn btn-ghost  ">সাইন ইন</button>
+            </Link>
 
-            <button className="btn  bg-green-600">সাইন আপ</button>
+            <Link href="/Signup">
+              {" "}
+              <button className="btn  bg-green-600">সাইন আপ</button>
+            </Link>
           </div>
         </div>
         <div>
