@@ -28,7 +28,13 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col">
         <Toaster position="top-right" />
-        <Suspense fallback={<div>Loading navigation...</div>}>
+        <Suspense
+          fallback={
+            <h1 className="text-xl font-bold text-[#000000]">
+              Loading navigation...
+            </h1>
+          }
+        >
           <Navbar />
         </Suspense>
 

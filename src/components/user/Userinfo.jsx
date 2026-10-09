@@ -1,6 +1,7 @@
 "use client";
 
 import { authClient } from "@/lib/auth-client";
+import { toast } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -11,7 +12,14 @@ export default function Userinfo() {
   const router = useRouter();
 
   const handlesignout = async () => {
-    await authClient.signOut();
+    const { error } = await authClient.signOut();
+
+    if (error) {
+      toast.error("সাইন আউট ব্যর্থ হয়েছে।");
+      return;
+    }
+
+    toast.success("সফলভাবে সাইন আউট হয়েছে।");
     router.push("/");
     router.refresh();
   };
@@ -28,14 +36,14 @@ export default function Userinfo() {
             </div>
           </div>
           <h2>{user?.name}</h2>
-          <button className="btn btn-block">Signout</button>
+          <button onClick={handlesignout} className="btn btn-block">
+            Signout
+          </button>
         </div>
       ) : (
         <div className="flex items-center gap-2">
           <Link href="/Signin">
-            <button onClick={handlesignout} className="btn btn-ghost">
-              সাইন ইন
-            </button>
+            <button className="btn btn-ghost">সাইন ইন</button>
           </Link>
 
           <Link href="/Signup">

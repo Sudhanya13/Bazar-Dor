@@ -25,7 +25,7 @@ export default function Signup() {
 
     if (error) {
       console.log(error);
-      toast.error(error.message || "Registration failed!");
+      toast.error("Registration failed!");
       return;
     }
 
@@ -55,33 +55,52 @@ export default function Signup() {
   };
   return (
     <div className=" mx-auto  max-w-7xl">
-      {" "}
+      <h1 className="text-center font-bold font-black text-3xl">
+        অ্যাকাউন্ট তৈরি করুন
+      </h1>
+      <p className="py-3">বিনা খরচে সাইন আপ করে সব বিস্তারিত দাম দেখুন।</p>{" "}
       <form onSubmit={onSubmit}>
-        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+        <fieldset className="fieldset bg-base-200 border-base-300 rounded-xl w-sm border p-4">
           <legend className="fieldset-legend">Login</legend>
 
-          <label className="label">Name</label>
-          <input type="name" name="name" className="input" placeholder="Name" />
+          <label className="label">নাম</label>
+          <input
+            type="name"
+            name="name"
+            className="input  px-5 rounded-md"
+            placeholder="example: Sudhanya Dutta"
+          />
 
-          <label className="label">Email</label>
+          <label className="label">ইমেইল</label>
           <input
             type="email"
             name="email"
-            className="input"
-            placeholder="Email"
+            className="input  px-5 rounded-md"
+            placeholder="you@example.com"
           />
 
-          <label className="label">Password</label>
+          <label className="label">পাসওয়ার্ড</label>
           <input
             type="password"
             name="password"
-            className="input"
-            placeholder="Password"
+            className="input  px-5 rounded-md"
+            placeholder="Minimum 8 letters"
           />
-
-          <button className="btn btn-neutral mt-4">Register</button>
+          <label className="label">পাসওয়ার্ড নিশ্চিত করুন</label>
+          <input
+            type="password"
+            name="password"
+            className="input  px-5 rounded-md"
+            placeholder="write again"
+          />
+          <button className="btn btn-neutral bg-green-700 mt-4">
+            {" "}
+            অ্যাকাউন্ট তৈরি করুন
+          </button>
         </fieldset>
       </form>
     </div>
   );
 }
+
+// ফর্মের তথ্য ঠিক করে আবার চেষ্টা করুন।
