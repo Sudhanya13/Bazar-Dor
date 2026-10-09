@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+export const instant = false;
 
 // Fetch products and filter by category slug
 const getCategoryDetails = async (categorySlug) => {

@@ -9,12 +9,14 @@ import ProductPriceSections from "@/components/homepage/ProductPriceSections";
 export default function Home() {
   return (
     <>
-      <Suspense fallback={<div>Loading products...</div>}>
+      <Suspense fallback={<div>Loading Marque...</div>}>
         <Marque></Marque>
       </Suspense>
 
       <Banner />
-      <ProductPriceSections />
+      <Suspense fallback={<div>Loading ProductPrice...</div>}>
+        <ProductPriceSections />
+      </Suspense>
 
       <Suspense fallback={<div>Loading products...</div>}>
         <Allproducts />

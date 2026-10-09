@@ -309,7 +309,9 @@
 //   );
 // }
 import React from "react";
+
 import Link from "next/link";
+import { connection } from "next/server";
 
 const API_URL = "https://api.api-store.workers.dev/api/bazardor/products";
 
@@ -456,6 +458,7 @@ function Section({ title, icon, products, emptyMessage, iconColor = "" }) {
 }
 
 export default async function ProductPriceSections() {
+  await connection();
   const products = await fetchAllProducts();
 
   // Price Increased: percentage > 0 (Sorted from highest increase to lowest)

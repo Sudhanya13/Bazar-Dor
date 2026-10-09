@@ -40,6 +40,7 @@
 
 import React from "react";
 import { notFound } from "next/navigation";
+export const instant = false;
 
 // Data Fetcher
 async function getProducts() {
