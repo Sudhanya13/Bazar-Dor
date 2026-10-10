@@ -72,6 +72,10 @@ export default function ProfilePage() {
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
 
+  // if (!user) {
+  //   redirect("/Signup");
+  // }
+
   const [name, setName] = useState(user?.name || "");
 
   const handleUpdate = (e) => {
