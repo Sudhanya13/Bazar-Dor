@@ -31,6 +31,7 @@
 // }
 
 import React from "react";
+export const instant = false;
 
 const fetchproducts = async () => {
   try {

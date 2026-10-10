@@ -143,15 +143,37 @@ export default function Signup() {
     const user = Object.fromEntries(formdata.entries());
 
     console.log(user);
+    // for the password matching--
+    if (user.password !== user.confirmPassword) {
+      toast.error("ফর্মের তথ্য ঠিক করে আবার চেষ্টা করুন।");
+      return;
+    }
 
     const { data, error } = await authClient.signUp.email({
       ...user,
       callbackURL: "/",
     });
 
+    // if (error) {
+    //   console.log(error);
+    //   toast.error(error.message || "Registration failed!");
+    //   return;
+    // }
     if (error) {
       console.log(error);
-      toast.error(error.message || "Registration failed!");
+      const errorMessage = error.message?.toLowerCase() || "";
+
+      // পাসওয়ার্ড বা ইনপুট সম্পর্কিত ভুল থাকলে বাংলা মেসেজ
+      if (
+        errorMessage.includes("password") ||
+        errorMessage.includes("invalid") ||
+        errorMessage.includes("short")
+      ) {
+        toast.error("ফর্মের তথ্য ঠিক করে আবার চেষ্টা করুন।");
+      } else {
+        // অন্যান্য সমস্ত রেজিস্ট্রেশন ত্রুটির জন্য
+        toast.error("সফলভাবে সাইন আউট হয়েছে।");
+      }
       return;
     }
 

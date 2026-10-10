@@ -428,10 +428,6 @@ function Section({ title, icon, products, emptyMessage, iconColor = "" }) {
           <h2 className="text-2xl font-extrabold text-base-content flex items-center gap-2">
             {title} <span className={iconColor}>{icon}</span>
           </h2>
-
-          <p className="mt-1 text-sm text-base-content/70">
-            আজকের বাজারদরের পরিবর্তন
-          </p>
         </div>
 
         <span className="rounded-full bg-base-200 px-3 py-1 text-sm font-medium">
@@ -478,7 +474,7 @@ export default async function ProductPriceSections() {
       <Section
         title="আজ দাম বেড়েছে"
         icon="▲"
-        iconColor="text-green-600"
+        iconColor="text-red-600"
         products={risers}
         emptyMessage="আজ দাম বেড়েছে এমন কোনো পণ্য নেই।"
       />
@@ -486,7 +482,7 @@ export default async function ProductPriceSections() {
       <Section
         title="আজ দাম কমেছে"
         icon="▼"
-        iconColor="text-red-600"
+        iconColor="text-green-600"
         products={fallers}
         emptyMessage="আজ দাম কমেছে এমন কোনো পণ্য নেই।"
       />
