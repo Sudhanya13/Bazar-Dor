@@ -81,7 +81,7 @@ export default function Signin() {
     }
 
     if (data) {
-      toast.success("সফলভাবে সাইন আউট হয়েছে।");
+      toast.success("সফলভাবে সাইন ইন হয়েছে।");
       router.push("/");
     }
   };

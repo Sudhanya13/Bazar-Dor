@@ -123,18 +123,21 @@ import React from "react";
 import toast from "react-hot-toast";
 
 export default function Signup() {
+  // sessionStorage.setItem("show_login_toast", "true");
   const router = useRouter();
 
   const handleGooglesignup = async () => {
+    toast.loading("গুগল রিডাইরেক্ট করা হচ্ছে...");
     await authClient.signIn.social({
       provider: "google",
-      callbackURL: "/",
+      // callbackURL: "/",
     });
   };
   const handleGithubsignup = async () => {
+    toast.loading("গুগল রিডাইরেক্ট করা হচ্ছে...");
     await authClient.signIn.social({
       provider: "github",
-      callbackURL: "/",
+      // callbackURL: "/",
     });
   };
   const onSubmit = async (e) => {
@@ -169,10 +172,10 @@ export default function Signup() {
         errorMessage.includes("invalid") ||
         errorMessage.includes("short")
       ) {
-        toast.error("ফর্মের তথ্য ঠিক করে আবার চেষ্টা করুন।");
+        toast.error("সাইন আউট ব্যর্থ হয়েছে।");
       } else {
         // অন্যান্য সমস্ত রেজিস্ট্রেশন ত্রুটির জন্য
-        toast.error("সফলভাবে সাইন আউট হয়েছে।");
+        toast.error("সাইন আউট ব্যর্থ হয়েছে।");
       }
       return;
     }
@@ -180,6 +183,7 @@ export default function Signup() {
     if (data) {
       console.log(data);
       toast.success("Registration successful!");
+
       router.push("/");
     }
   };

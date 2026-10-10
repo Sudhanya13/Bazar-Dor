@@ -40,12 +40,12 @@
 
 import React from "react";
 import { notFound } from "next/navigation";
-export const instant = false;
+// export const instant = false;
 
 // Data Fetcher
 async function getProducts() {
   const res = await fetch(
-    "https://api.api-store.workers.dev/api/bazardor/products",
+    "https://openapi.programming-hero.com/api/bazardor/products",
     { next: { revalidate: 60 } },
   );
 

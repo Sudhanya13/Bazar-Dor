@@ -10,7 +10,9 @@ import Link from "next/link";
 //   return res.json();
 // };
 const fetchAllProducts = async () => {
-  const res = await fetch("https://api.abcz.workers.dev/api/bazardor/products");
+  const res = await fetch(
+    "https://openapi.programming-hero.com/api/bazardor/products",
+  );
   return res.json();
 };
 
@@ -19,16 +21,18 @@ export default async function Allproducts() {
   console.log(allproducts);
   return (
     <>
-      <div className="items-center ">
-        <h1 className="text-2xl text-black font-bold">সব পণ্য</h1>
-        <p className="text-xl text-grey">মোট ৩৩টি পণ্য দেখানো হচ্ছে</p>
-      </div>
-
-      <div className="container mx-auto  max-w-7xl px-4 py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Productscard allproducts={allproducts}></Productscard>
+      <section className=" container mx-auto  max-w-7xl px-4 py-8">
+        <div className=" py-6 ">
+          <h1 className="text-2xl text-black font-bold">সব পণ্য</h1>
+          <p className="text-xl text-grey">মোট ৩৩টি পণ্য দেখানো হচ্ছে</p>
         </div>
-      </div>
+
+        <div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Productscard allproducts={allproducts}></Productscard>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

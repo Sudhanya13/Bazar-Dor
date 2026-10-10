@@ -308,12 +308,14 @@
 //     </div>
 //   );
 // }
+// "use client";
 import React from "react";
 
 import Link from "next/link";
 import { connection } from "next/server";
 
-const API_URL = "https://api.api-store.workers.dev/api/bazardor/products";
+// const API_URL = "https://api.api-store.workers.dev/api/bazardor/products";
+const API_URL = "https://openapi.programming-hero.com/api/bazardor/products";
 
 async function fetchAllProducts() {
   try {
@@ -422,17 +424,17 @@ function ProductCard({ item }) {
 
 function Section({ title, icon, products, emptyMessage, iconColor = "" }) {
   return (
-    <section className="mb-12">
-      <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-        <div>
+    <section className="mb-12 mx-auto max-w-7xl container">
+      <div className="mb-5 flex flex-wrap items-center  justify-between gap-3">
+        <div className="ml-3">
           <h2 className="text-2xl font-extrabold text-base-content flex items-center gap-2">
             {title} <span className={iconColor}>{icon}</span>
           </h2>
         </div>
 
-        <span className="rounded-full bg-base-200 px-3 py-1 text-sm font-medium">
+        {/* <span className="rounded-full bg-base-200 px-3 py-1 text-sm font-medium">
           {bnNumber(products.length)} টি পণ্য
-        </span>
+        </span> */}
       </div>
 
       {products.length === 0 ? (

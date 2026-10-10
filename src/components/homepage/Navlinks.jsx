@@ -19,7 +19,8 @@ import Link from "next/link";
 
 const fetchCategories = async () => {
   const response = await fetch(
-    "https://api.api-store.workers.dev/api/bazardor/categories",
+    // "https://api.api-store.workers.dev/api/bazardor/categories",
+    "https://openapi.programming-hero.com/api/bazardor/categories",
   );
   const data = await response.json();
   //   console.log(data);
