@@ -226,7 +226,7 @@ export default function Userinfo() {
           </Link>
 
           <Link href="/Signup">
-            <button className="btn bg-green-600 text-white">সাইন আপ</button>
+            <button className="btn bg-green-600 text-white"> সাইন আপ</button>
           </Link>
         </div>
       )}

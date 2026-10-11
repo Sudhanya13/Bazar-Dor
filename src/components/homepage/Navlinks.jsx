@@ -56,7 +56,7 @@ export default async function Navlinks() {
 
   return (
     <>
-      <div className="mt-4 px-6 py-3 container flex gap-5 mx-auto max-w-7xl">
+      <div className="container mx-auto mt-4 flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 md:flex-row md:gap-5">
         {data.map((item, index) => (
           <div key={index}>
             <Link href={`/category/${item.slug}`} key={item.id}>
