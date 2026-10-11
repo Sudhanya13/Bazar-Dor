@@ -416,11 +416,12 @@ export default async function Page({ params }) {
   const categorySlug = resolvedParams?.slug || resolvedParams?.id;
 
   if (!categorySlug) {
-    return (
-      <div className="p-8 text-center">
-        এই ক্যাটাগরিতে কোনো পণ্য পাওয়া যায়নি।
-      </div>
-    );
+    // return (
+    // <div className="p-8 text-center">
+    //   এই ক্যাটাগরিতে কোনো পণ্য পাওয়া যায়নি।
+    // </div>
+    notFound();
+    // );
   }
 
   const allproducts = await getCategoryDetails(categorySlug);
