@@ -42,7 +42,7 @@ export default function Productscard({ allproducts }) {
                   <div>
                     <p className="text-xs text-base-content/70">আজকের দাম</p>
                     <p className="text-2xl font-extrabold text-primary">
-                      ৳ {item.today}
+                      {item.today} টাকা
                     </p>
                   </div>
 

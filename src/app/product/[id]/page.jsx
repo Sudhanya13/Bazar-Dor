@@ -289,13 +289,13 @@ export default async function Page({ params }) {
                         </span>
                       </td>
                       <td className="py-4 px-5 text-center font-medium text-slate-600">
-                        ৳{item.min}
+                        {item.min}টাকা
                       </td>
                       <td className="py-4 px-5 text-center font-medium text-slate-600">
-                        ৳{item.max}
+                        {item.max} টাকা
                       </td>
                       <td className="py-4 px-5 text-right pr-6 font-bold text-emerald-600 text-base">
-                        ৳{avgPrice}
+                        {avgPrice} টাকা
                       </td>
                     </tr>
                   );

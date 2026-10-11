@@ -319,7 +319,7 @@ const API_URL = "https://openapi.programming-hero.com/api/bazardor/products";
 
 async function fetchAllProducts() {
   try {
-    const res = await fetch(API_URL, { cache: "no-store" });
+    const res = await fetch(API_URL);
 
     if (!res.ok) {
       throw new Error("Failed to fetch products");

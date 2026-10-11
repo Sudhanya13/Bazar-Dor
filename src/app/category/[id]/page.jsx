@@ -363,7 +363,7 @@ const getCategoryDetails = async (categorySlug) => {
   try {
     const res = await fetch(
       `https://openapi.programming-hero.com/api/bazardor/products?category=${categorySlug}`,
-      { cache: "no-store" },
+      // { cache: "no-store" },
     );
 
     if (!res.ok) {

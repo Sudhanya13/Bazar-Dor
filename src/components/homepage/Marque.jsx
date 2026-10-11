@@ -38,7 +38,7 @@ const fetchproducts = async () => {
     const res = await fetch(
       // "https://api.api-store.workers.dev/api/bazardor/products",
       "https://openapi.programming-hero.com/api/bazardor/products",
-      { cache: "no-store" },
+      // { cache: "no-store" },
     );
     if (!res.ok) return [];
     return await res.json();
