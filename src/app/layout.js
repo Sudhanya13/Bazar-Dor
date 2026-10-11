@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="  min-h-full flex flex-col">
         <Toaster position="top-right" />
         <Suspense
           fallback={
@@ -48,8 +48,7 @@ export default function RootLayout({ children }) {
         >
           <Marquee />
         </Suspense>
-
-        {children}
+        <main className="bg-[#F0F5F0]">{children}</main>
 
         <Footer />
       </body>

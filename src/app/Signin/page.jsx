@@ -44,6 +44,8 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "react-hot-toast";
+import Link from "next/link";
+// import { Link } from "lucide-react";
 
 const handleGooglesignin = async () => {
   await authClient.signIn.social({
@@ -76,7 +78,7 @@ export default function Signin() {
 
     if (error) {
       console.error(error);
-      toast.error("সাইন আউট ব্যর্থ হয়েছে।");
+      toast.error("সাইন আপ ব্যর্থ হয়েছে।");
       return;
     }
 
@@ -89,13 +91,13 @@ export default function Signin() {
   // The JSX must be returned directly from the main component function
   return (
     <>
-      <div className="mx-auto max-w-7xl mt-6">
+      <div className="mx-auto mt-6 flex max-w-7xl flex-col items-center px-4">
         <h1 className="text-center font-bold font-black text-3xl">সাইন ইন</h1>
         <p className="py-3">
           বিস্তারিত দাম, বাজার তুলনা ও প্রোফাইল দেখতে অ্যাকাউন্টে ঢুকুন।
         </p>
         <form onSubmit={onSubmit}>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-xl w-sm border p-4">
+          <fieldset className="fieldset bg-base-200 border-base-300 rounded-xl w-full w-sm border p-4">
             <legend className="fieldset-legend">Login</legend>
 
             <label className="label ">ইমেইল</label>
@@ -180,6 +182,26 @@ export default function Signin() {
             </div>
           </fieldset>
         </form>
+
+        <div className="mt-6 flex flex-col items-center gap-3 text-center">
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <h2 className="text-[#000000]">অ্যাকাউন্ট নেই?</h2>
+
+            <Link
+              href="/Signup"
+              className="font-semibold text-green-600 hover:text-green-700 transition-colors"
+            >
+              সাইন আপ করুন
+            </Link>
+          </div>
+
+          <Link
+            href="/"
+            className="text-sm text-[#1D271F] hover:text-green-600 transition-colors"
+          >
+            ← হোম পেজে ফিরে যান
+          </Link>
+        </div>
       </div>
     </>
   );

@@ -79,13 +79,13 @@ export default function SortingCategoryData({ data }) {
   return (
     <div>
       {/* Sorting Controls */}
-      <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mb-6 flex flex-col  py-3 px-4 gap-3 sm:flex-row sm:items-center sm:justify-between border border-base-200 bg-base-100 rounded-2xl shadow-sm ">
         <p className="text-sm text-base-content/70">
           মোট {toBengaliNumerals(data.length)} টি পণ্য
         </p>
 
         <div className="flex items-center gap-3">
-          <label htmlFor="sort" className="text-sm font-medium">
+          <label htmlFor="sort" className="text-sm   font-medium">
             সাজান:
           </label>
 
@@ -93,7 +93,7 @@ export default function SortingCategoryData({ data }) {
             id="sort"
             value={sort}
             onChange={(e) => setSort(e.target.value)}
-            className="select select-bordered w-full max-w-xs"
+            className="select select-bordered w-full  py-2 max-w-xs"
           >
             <option value="default">ডিফল্ট</option>
             <option value="priceLowToHigh">দাম: কম থেকে বেশি</option>
@@ -103,7 +103,7 @@ export default function SortingCategoryData({ data }) {
       </div>
 
       {/* Sorted Product Grid */}
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-7">
         {sortedProducts.map((item) => {
           const pct = Number(item.change?.pct ?? 0);
           const isIncrease = pct > 0;

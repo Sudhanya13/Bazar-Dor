@@ -21,7 +21,7 @@ export default async function Allproducts() {
   console.log(allproducts);
   return (
     <>
-      <section className=" container mx-auto  max-w-7xl px-4 py-8">
+      <section id="সব-পণ্য" className=" container mx-auto  max-w-7xl px-4 py-8">
         <div className=" py-6 ">
           <h1 className="text-2xl text-black font-bold">সব পণ্য</h1>
           <p className="text-xl text-grey">মোট ৩৩টি পণ্য দেখানো হচ্ছে</p>

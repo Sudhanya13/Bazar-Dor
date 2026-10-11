@@ -7,7 +7,7 @@ const date = new Date().toLocaleDateString("bn-BD", { dateStyle: "full" });
 export default function Navbar() {
   return (
     <>
-      <nav className=" px-6 py-4">
+      <nav className="bg-[#FAFCFA] px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo + Brand */}
           <div className="flex items-center gap-2  ">

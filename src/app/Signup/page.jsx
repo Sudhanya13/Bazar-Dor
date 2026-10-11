@@ -118,6 +118,7 @@
 "use client";
 
 import { authClient } from "@/lib/auth-client";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 import toast from "react-hot-toast";
@@ -189,13 +190,13 @@ export default function Signup() {
   };
 
   return (
-    <div className="mx-auto max-w-7xl mt-6">
+    <div className="mx-auto mt-6 flex max-w-7xl flex-col items-center px-4">
       <h1 className="text-center font-bold font-black text-3xl">
         অ্যাকাউন্ট তৈরি করুন
       </h1>
       <p className="py-3">বিনা খরচে সাইন আপ করে সব বিস্তারিত দাম দেখুন।</p>{" "}
       <form onSubmit={onSubmit}>
-        <fieldset className="fieldset bg-base-200 border-base-300 rounded-xl w-sm border p-4">
+        <fieldset className="fieldset bg-base-200 border-base-300  w-full max-w-sm rounded-xl w-sm border p-4">
           <legend className="fieldset-legend">Login</legend>
 
           <label className="label">নাম</label>
@@ -294,6 +295,24 @@ export default function Signup() {
           </div>
         </fieldset>
       </form>
+      <div className="mt-6 flex flex-col items-center gap-3 text-center">
+        <div className="flex items-center gap-2 text-sm text-gray-600">
+          <h2 className="text-[#000000]">অ্যাকাউন্ট আছে?</h2>
+
+          <Link href="/Signin">
+            <h2 className="text-green-500">সাইন ইন করুন</h2>
+          </Link>
+        </div>
+
+        <div className="mt-3">
+          <Link
+            href="/"
+            className="text-sm text-[#1D271F] hover:text-green-600 transition-colors"
+          >
+            ← হোম পেজে ফিরে যান
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
